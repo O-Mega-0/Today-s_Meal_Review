@@ -12,8 +12,8 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 const ratedMenus = new Set();
-const clickSound = new Audio("https://github.com/nuelim887/Sound_Effect/raw/refs/heads/main/Sound_Effect.mp3");
-clickSound.volume = 1.0;
+const click = new Audio("https://raw.githubusercontent.com/o-mega-0/Today-s_Meal_Reavies/main/Effect");
+click.volume = 1.0;
 
 const meals = {
   1: ["기장밥", "꽃게된장국", "고추장제육볶음", "달걀찜", "추로스스낵", "겨울초부추겉절이", "사과감자샐러드", "김치", "액상요구르트"]
@@ -156,7 +156,7 @@ function submitRating(menu,score,dateStr,buttonsContainer,info){
   const userId=getLocalUserId();
   const localKey=buildLocalRatedKey(userId,dateStr,menu);
   db.collection("ratings").add({menu,score:parseInt(score,10),date:dateStr,user:userId}).then(()=>{
-    clickSound.currentTime=0; clickSound.play();
+    click.currentTime=0; click.play();
     localStorage.setItem(localKey,"1");
     ratedMenus.add(menu);
     setCardColor(info.parentNode,score);
@@ -189,6 +189,7 @@ const savedTheme=localStorage.getItem("theme");
 if(savedTheme) document.body.className=savedTheme;
 loadTodayMenu();
 setInterval(()=>{ getSeoulNow(); },15000);
+
 
 
 
