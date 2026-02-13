@@ -16,7 +16,7 @@ const click = new Audio("https://raw.githubusercontent.com/o-mega-0/Today-s_Meal
 click.volume = 1.0;
 
 const meals = {
-  1: ["기장밥", "꽃게된장국", "고추장제육볶음", "달걀찜", "추로스스낵", "겨울초부추겉절이", "사과감자샐러드", "김치", "액상요구르트"]
+  13: ["기장밥", "꽃게된장국", "고추장제육볶음", "달걀찜", "추로스스낵", "겨울초부추겉절이", "사과감자샐러드", "김치", "액상요구르트"]
 };
 
 const menuListDiv = document.getElementById("menuList");
@@ -189,6 +189,7 @@ const savedTheme=localStorage.getItem("theme");
 if(savedTheme) document.body.className=savedTheme;
 loadTodayMenu();
 setInterval(()=>{ getSeoulNow(); },15000);
+
 
 
 
