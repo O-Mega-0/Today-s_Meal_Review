@@ -12,7 +12,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 const ratedMenus = new Set();
-const click = new Audio("https://raw.githubusercontent.com/o-mega-0/Today-s_Meal_Reavies/main/Effect");
+const click = new Audio("https://raw.githubusercontent.com/o-mega-0/Today-s_Meal_Review/main/SoundEffect.mp3");
 click.volume = 1.0;
 
 const meals = {
